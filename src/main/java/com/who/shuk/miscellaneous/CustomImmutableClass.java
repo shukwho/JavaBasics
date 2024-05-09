@@ -62,7 +62,7 @@ class Test {
                 Arrays.stream(new String[]{"1234","5678"}).collect(Collectors.toList()));
         System.out.println(customImmutableClass);
         customImmutableClass.getDate().setDate(15);
-        customImmutableClass.getListField().add("9012");
+        customImmutableClass.getListField().add("9012"); //this will not be added
         System.out.println(customImmutableClass);
 
     }
