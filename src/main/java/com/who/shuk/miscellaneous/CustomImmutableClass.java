@@ -2,10 +2,8 @@ package com.who.shuk.miscellaneous;
 
 import com.who.shuk.exceptionHandling.CustomException;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public final class CustomImmutableClass {
 
@@ -60,9 +58,11 @@ class Test {
         //CustomImmutableClass customImmutableClass = new CustomImmutableClass(1,"field2");
         //customImmutableClass.field2="field2updated"; -- this line throws error as we can't change immutable class
         //CustomImmutableClass customImmutableClass = new CustomImmutableClass(1, "field2", new Date());
-        CustomImmutableClass customImmutableClass = new CustomImmutableClass(1,"field2", new Date(), Collections.singletonList("list"));
+        CustomImmutableClass customImmutableClass = new CustomImmutableClass(1,"field2", new Date(),
+                Arrays.stream(new String[]{"1234","5678"}).collect(Collectors.toList()));
         System.out.println(customImmutableClass);
         customImmutableClass.getDate().setDate(15);
+        customImmutableClass.getListField().add("9012");
         System.out.println(customImmutableClass);
 
     }
