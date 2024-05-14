@@ -1,6 +1,6 @@
 package com.who.shuk.exceptionHandling;
 
-public class ExceptionOrder {
+public class  ExceptionOrder {
     public static void main(String[] args) {
         try{
             System.out.println(10/0);
